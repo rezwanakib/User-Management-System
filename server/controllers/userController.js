@@ -16,7 +16,7 @@ exports.view = (req,res) => {
         console.log('connected as ID ' + connection.threadId);
  
          //user the connection
-         connection.query('SELECT * FROM user', (err, rows) => {
+         connection.query('SELECT * FROM user ORDER BY id DESC', (err, rows) => {
              // when done with the connection, release it
              connection.release();
  
